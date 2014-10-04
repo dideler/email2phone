@@ -23,6 +23,7 @@ group :development do
   gem 'awesome_print'
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
+  gem 'hirb'
   gem 'html2haml'
   gem 'quiet_assets'
   gem 'rails_apps_pages'
