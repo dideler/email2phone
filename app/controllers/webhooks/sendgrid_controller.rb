@@ -29,10 +29,17 @@ class Webhooks::SendgridController < WebhooksController
       text: chomped_text,
       sender_ip: params['sender_ip'],
     )
+
+    call = params['subject'].strip.downcase[0,4] == "call"  # Text is default.
+
     recipients = extract_numbers(params['subject'])
     ap recipients if Rails.env.development?
     recipients.each do |number|
-      send_sms(number, chomped_text)
+      if call
+        call(number, chomped_text)
+      else
+        send_sms(number, chomped_text)
+      end
     end
     render json: { message: "OK" }, status: 200
   end
