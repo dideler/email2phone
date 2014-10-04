@@ -40,4 +40,12 @@ class Webhooks::SendgridController < WebhooksController
     email_subject.split(/[a-z A-Z ,;:]/).reject(&:empty?)
   end
 
+  def send_sms
+    Twilio::SMS.create(
+      to: valid_number(ENV['TEST_NUMBER']),
+      from: valid_number(ENV['TWILIO_NUMBER']),
+      body: "I came to kick ass and chew gum... and I'm all outta gum."
+    )
+  end
+
 end
