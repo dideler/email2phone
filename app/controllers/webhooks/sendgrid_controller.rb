@@ -46,11 +46,20 @@ class Webhooks::SendgridController < WebhooksController
     email_subject.split(/[a-zA-Z,;:]/).each(&:strip!).reject(&:empty?)
   end
 
+  # You can send messages containing up to 1600 characters without being split.
   def send_sms(recipient_number, message)
     Twilio::SMS.create(
       to: valid_number(recipient_number),
       from: valid_number(ENV['TWILIO_NUMBER']),
       body: message,
+    )
+  end
+
+  def call(recipient_number, message)
+    Twilio::Call.create(
+      to: valid_number(recipient_number),
+      from: valid_number(ENV['TWILIO_NUMBER']),
+      url: "http://twimlets.com/message?Message%5B0%5D=#{CGI.escape message}",
     )
   end
 
