@@ -37,7 +37,7 @@ class Webhooks::SendgridController < WebhooksController
   # Splits on commas (,), semi-colons (;), and colons (:).
   # Does not split on space ( ), because numbers often have spaces in them.
   def extract_numbers(email_subject)
-    email_subject.split(/[a-z A-Z ,;:]/).reject(&:empty?) # FIXME: splits nums with spaces
+    email_subject.split(/[a-zA-Z,;:]/).each(&:strip!).reject(&:empty?)
   end
 
   def send_sms
