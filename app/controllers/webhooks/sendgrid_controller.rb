@@ -31,4 +31,13 @@ class Webhooks::SendgridController < WebhooksController
     render json: { message: "OK" }, status: 200
   end
 
+  private  # I don't always make my controllers fat... but I do in hackathons!
+
+  # Returns an array of phone numbers extracted from the email subject.
+  # Splits on commas (,), semi-colons (;), and colons (:).
+  # Does not split on space ( ), because numbers often have spaces in them.
+  def extract_numbers(email_subject)
+    email_subject.split(/[a-z A-Z ,;:]/).reject(&:empty?)
+  end
+
 end
