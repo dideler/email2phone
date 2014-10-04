@@ -21,11 +21,12 @@ class Webhooks::SendgridController < WebhooksController
   # POST /inbound -> /webhooks/sendgrid#email
   def email
     ap params if Rails.env.development?
+    chomped_text = params['text'].chomp
     @inbound_email = InboundEmail.create(
       to: params['to'],
       from: params['from'],
       subject: params['subject'],
-      text: params['text'].chomp,
+      text: chomped_text,
       sender_ip: params['sender_ip'],
     )
     render json: { message: "OK" }, status: 200
