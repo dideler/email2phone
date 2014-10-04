@@ -2,6 +2,9 @@ source 'https://rubygems.org'
 
 ruby '2.1.3'
 
+# Load environment variables from .env in development before other gems init.
+gem 'dotenv-rails', groups: [:development, :test]
+
 # gem 'jbuilder', '~> 2.0'
 gem 'bootstrap-sass'
 gem 'coffee-rails', '~> 4.0.0'
