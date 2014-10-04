@@ -25,7 +25,7 @@ class Webhooks::SendgridController < WebhooksController
       to: params['to'],
       from: params['from'],
       subject: params['subject'],
-      text: params['text'],
+      text: params['text'].chomp,
       sender_ip: params['sender_ip'],
     )
     render json: { message: "OK" }, status: 200
