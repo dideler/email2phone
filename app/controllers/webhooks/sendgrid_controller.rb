@@ -48,4 +48,10 @@ class Webhooks::SendgridController < WebhooksController
     )
   end
 
+  # Tries to return a valid number.
+  # TODO: Make it more robust if time permits.
+  def valid_number(number)
+    "+#{number}" if number && number !~ %r{^+}
+  end
+
 end
