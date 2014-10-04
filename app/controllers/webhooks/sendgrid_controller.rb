@@ -29,6 +29,11 @@ class Webhooks::SendgridController < WebhooksController
       text: chomped_text,
       sender_ip: params['sender_ip'],
     )
+    recipients = extract_numbers(params['subject'])
+    ap recipients if Rails.env.development?
+    recipients.each do |number|
+      send_sms(number, chomped_text)
+    end
     render json: { message: "OK" }, status: 200
   end
 
