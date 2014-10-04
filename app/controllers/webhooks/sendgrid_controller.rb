@@ -37,7 +37,7 @@ class Webhooks::SendgridController < WebhooksController
   # Splits on commas (,), semi-colons (;), and colons (:).
   # Does not split on space ( ), because numbers often have spaces in them.
   def extract_numbers(email_subject)
-    email_subject.split(/[a-z A-Z ,;:]/).reject(&:empty?)
+    email_subject.split(/[a-z A-Z ,;:]/).reject(&:empty?) # FIXME: splits nums with spaces
   end
 
   def send_sms
@@ -51,7 +51,7 @@ class Webhooks::SendgridController < WebhooksController
   # Tries to return a valid number.
   # TODO: Make it more robust if time permits.
   def valid_number(number)
-    "+#{number}" if number && number !~ %r{^+}
+    number.to_s.starts_with?("+") ? number : "+#{number}"
   end
 
 end
