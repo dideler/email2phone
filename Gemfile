@@ -9,7 +9,6 @@ gem 'dotenv-rails', groups: [:development, :test]
 gem 'bootstrap-sass'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'devise'
-gem 'god'
 gem 'haml-rails'
 gem 'jquery-rails'
 gem 'pundit'

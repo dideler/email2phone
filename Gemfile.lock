@@ -63,7 +63,6 @@ GEM
       dotenv (= 0.11.1)
     erubis (2.7.0)
     execjs (2.2.1)
-    god (0.13.4)
     haml (4.1.0.beta.1)
       tilt
     haml-rails (0.5.3)
@@ -185,7 +184,6 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   devise
   dotenv-rails
-  god
   haml-rails
   hirb
   html2haml
