@@ -17,7 +17,9 @@ gem 'sass-rails', '~> 4.0.3'
 gem 'sendgrid'
 gem 'simple_form'
 gem 'turbolinks'
+gem 'twilio-rb' # Note: official gem is twilio-ruby
 gem 'uglifier', '>= 1.3.0'
+
 
 group :development do
   gem 'awesome_print'
