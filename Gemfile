@@ -20,6 +20,7 @@ gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 
 group :development do
+  gem 'awesome_print'
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
   gem 'html2haml'
