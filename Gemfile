@@ -10,6 +10,7 @@ gem 'bootstrap-sass'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'devise'
 gem 'haml-rails'
+gem 'jquery-easing-rails'
 gem 'jquery-rails'
 gem 'pundit'
 gem 'rails', '4.1.6'
@@ -19,7 +20,6 @@ gem 'simple_form'
 gem 'turbolinks'
 gem 'twilio-rb' # Note: official gem is twilio-ruby
 gem 'uglifier', '>= 1.3.0'
-
 
 group :development do
   gem 'awesome_print'
