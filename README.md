@@ -17,3 +17,4 @@ Use [localtunnel](https://localtunnel.me/) (ngrok is blocked at bloomberg)
 - Call (voice) is also possible :ear: :ear:
   - Request it by prepending your subject with "call"
   - E.g. `call: 123456789` (case insensitive)
+- Send the email to email2phone@bymail.in
