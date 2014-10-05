@@ -85,7 +85,8 @@
             %br
             Ready to sign up?
             = bootstrap_form_for(@user) do |f|
-              = f.email_field :email, hide_label: :true, placeholder: "Email"
+              = f.email_field :email, hide_label: :true,
+                placeholder: "Enter your email to enable sending to multiple numbers"
               = f.submit "Sign up"
 
             - if flash[:notice]
