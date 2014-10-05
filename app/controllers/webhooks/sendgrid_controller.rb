@@ -31,15 +31,19 @@ class Webhooks::SendgridController < WebhooksController
     )
 
     call = params['subject'].strip.downcase[0,4] == "call"  # Text is default.
+    from = Mail::Address.new(params['from'])
 
     recipients = extract_numbers(params['subject'])
     ap recipients if Rails.env.development?
+
     recipients.each do |number|
       if call
         call(number, chomped_text)
       else
         send_sms(number, chomped_text)
       end
+      # Only send to multiple if signed up
+      break unless User.exists?(email: from.address)
     end
     render json: { message: "OK" }, status: 200
   end

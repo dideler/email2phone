@@ -6,12 +6,18 @@ class HomeController < ApplicationController
   end
 
   def create
-    @user = User.new(params[:user])
-    if @user.save
-      format.html { redirect_to action: "new", notice: 'Enjoy :)' } # Try success
-    else
-      format.html { render action: "new" }
+    @user = User.new(user_params)
+    #@user.save!
+    if @user.save # FIXME allows dupe emails right now
+      flash[:notice] = "Enjoy :)" # FIXME
     end
+    redirect_to action: "index"
+  end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:email)
   end
 
 end
