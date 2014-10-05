@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root "home#show"
+  root "home#index"
 
   # For now, just match to the email action.
   # If we add more inbound ways than email, we'll have to change routing.

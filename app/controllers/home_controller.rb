@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  def show
+  def index
     #render layout: false # If you want to put everything in a single view.
   end
 end
