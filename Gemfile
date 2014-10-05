@@ -7,6 +7,7 @@ gem 'dotenv-rails', groups: [:development, :test]
 
 # gem 'jbuilder', '~> 2.0'
 gem 'bootstrap-sass'
+gem 'braintree'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'devise'
 gem 'font-awesome-rails'
