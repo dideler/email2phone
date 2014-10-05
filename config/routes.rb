@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   # If we add more inbound ways than email, we'll have to change routing.
   match '/inbound', to: 'webhooks/sendgrid#email', via: :post
 
+  get "sounds/zelda.mp3" => 'application#get_zelda_sound'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
