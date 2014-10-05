@@ -10,7 +10,7 @@ Use [localtunnel](https://localtunnel.me/) (ngrok is blocked at bloomberg)
   - Numbers can contain spaces
   - E.g. `12345678900, 00987654321; 123 4567 8900`
 - Put your message in the body
-  - Try to keep it simple and ideally plain text
+  - Try to keep it short and simple (ideally plain text)
 - Text (SMS) is default delivery method :eyes:
   - Can also explicitly request it by prepending your subject with "text"
   - E.g. `text: 123456789` (case insensitive)
