@@ -19,7 +19,6 @@ gem 'pundit'
 gem 'rails', '4.1.6'
 gem 'sass-rails', '~> 4.0.3'
 gem 'sendgrid'
-gem 'simple_form'
 gem 'turbolinks'
 gem 'twilio-rb' # Note: official gem is twilio-ruby
 gem 'uglifier', '>= 1.3.0'

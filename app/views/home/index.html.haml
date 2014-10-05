@@ -82,10 +82,9 @@
             %br
             Write a short message in the body and send away.
           %p
-            - simple_form_for @user do |f|
-              = f.input :email
-              = f.input :password
-              = f.button :submit
+            = bootstrap_form_for(@user) do |f|
+              = f.email_field :email
+              = f.submit "Sign up"
 
     %section#download.content-section.text-center
       .download-section
