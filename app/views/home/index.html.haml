@@ -82,8 +82,10 @@
             %br
             Write a short message in the body and send away.
           %p
+            %br
+            Ready to sign up?
             = bootstrap_form_for(@user) do |f|
-              = f.email_field :email
+              = f.email_field :email, hide_label: :true, placeholder: "Email"
               = f.submit "Sign up"
 
     %section#download.content-section.text-center
