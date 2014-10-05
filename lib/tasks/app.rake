@@ -1,9 +1,6 @@
 task :tunnel do
-  begin
+  loop do
     system("localtunnel --port 3000 --subdomain email2phone")
-  rescue
-    sleep(2)
-    retry
   end
 end
 
