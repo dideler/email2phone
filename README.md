@@ -1,6 +1,12 @@
 email2phone
 ===========
 
+**My entry for [MLH Launch Hack](http://launch.mlh.io)**
+
+Obvious disclaimer: This is a very messy project since it was for a hackathon.
+
+---
+
 Use email to send an SMS or voice message to the phones of your buddies.
 
 Use [localtunnel](https://localtunnel.me/) (ngrok is blocked at bloomberg)
