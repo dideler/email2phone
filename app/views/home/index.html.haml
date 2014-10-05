@@ -1,0 +1,118 @@
+!!!
+%html{:lang => "en"}
+  %head
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+    %meta{:content => "Use email to contact your mates when they don't have a data connection", :name => "description"}/
+    %meta{:content => "Dennis Ideler", :name => "author"}/
+    %title Email2Phone - Email your mates to give them a text or call
+    -# Custom Fonts
+    %link{:href => "http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "http://fonts.googleapis.com/css?family=Montserrat:400,700", :rel => "stylesheet", :type => "text/css"}/
+    / HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
+    / WARNING: Respond.js doesn't work if you view the page via file://
+    /[if lt IE 9]
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  %body#page-top{"data-spy" => "scroll", "data-target" => ".navbar-fixed-top"}
+    / Navigation
+    %nav.navbar.navbar-custom.navbar-fixed-top{:role => "navigation"}
+      .container
+        .navbar-header
+          %button.navbar-toggle{"data-target" => ".navbar-main-collapse", "data-toggle" => "collapse", :type => "button"}
+            %i.fa.fa-bars
+          %a.navbar-brand.page-scroll{:href => "#page-top"}
+            %i.fa.fa-play-circle
+            %span.light Start
+            Bootstrap
+        / Collect the nav links, forms, and other content for toggling
+        .collapse.navbar-collapse.navbar-right.navbar-main-collapse
+          %ul.nav.navbar-nav
+            / Hidden li included to remove active class from about link when scrolled up past about section
+            %li.hidden
+              %a{:href => "#page-top"}
+            %li
+              %a.page-scroll{:href => "#about"} About
+            %li
+              %a.page-scroll{:href => "#download"} Download
+            %li
+              %a.page-scroll{:href => "#contact"} Contact
+        / /.navbar-collapse
+      / /.container
+    / Intro Header
+    %header.intro
+      .intro-body
+        .container
+          .row
+            .col-md-8.col-md-offset-2
+              %h1.brand-heading Email2Phone
+              %p.intro-text
+                Email your mates when they don't have a data connection.
+                %br>/
+                They receive a text or voice message.
+              %a.btn.btn-circle.page-scroll{:href => "#about"}
+                %i.fa.fa-angle-double-down.animated
+
+    %section#about.container.content-section.text-center
+      .row
+        .col-lg-8.col-lg-offset-2
+          %h2 How to use Email2Phone
+          %p
+            %br
+            Send a short and simple email to
+            = mail_to "email2phone@bymail.in"
+          %p
+            %br
+            Enter a recipient's number in the subject:
+            %br
+            %code 44 1632 960694
+          %p
+            %br
+            Send your message to multiple recipients:
+            %br
+            %code 44 1632 960694, +44 1632 960656, 441632960219
+          %p
+            %br
+            Prepend your subject with "text" or "call" (text is default):
+            %br
+            %code Text: 441632960219, 441632940220
+            %br
+            %code call 447542320350
+          %p
+            %br
+            Write a short message in the body and send away.
+
+    %section#download.content-section.text-center
+      .download-section
+        .container
+          .col-lg-8.col-lg-offset-2
+            %h2 Download Email2Phone
+            %p Or star it. Or fork it. It's on GitHub.
+            %a.btn.btn-default.btn-lg{:href => "http://startbootstrap.com/template-overviews/grayscale/"} Visit Project Page
+
+    %section#contact.container.content-section.text-center
+      .row
+        .col-lg-8.col-lg-offset-2
+          %h2 Contact Dennis
+          %p Tell me if you like, or just say hello!
+          %p
+            = mail_to "ideler.dennis@gmail.com"
+          %ul.list-inline.banner-social-buttons
+            %li
+              %a.btn.btn-default.btn-lg{:href => "https://twitter.com/dideler"}
+                %i.fa.fa-twitter.fa-fw
+                %span.network-name Twitter
+            %li
+              %a.btn.btn-default.btn-lg{:href => "https://github.com/dideler"}
+                %i.fa.fa-github.fa-fw
+                %span.network-name Github
+
+    #map
+
+    %footer
+      .container.text-center
+        %p This was an entry for <a href="http://launch.mlh.io">MLH Launch Hack</a>
+
+    / Google Maps API Key. More information on the Google Maps API can be found at https://developers.google.com/maps/
+    %script{:src => "https://maps.googleapis.com/maps/api/js?key=AIzaSyCzHn_SAsN43iFXczp1O2Qq_qDWKaqQ1E8&sensor=false", :type => "text/javascript"}
