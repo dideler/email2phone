@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   get "sounds/zelda.mp3", to: "application#get_zelda_sound" # Abandoned.
 
-  resources :users
+  resources :users, :controller => 'home'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
