@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  devise_for :users
   root "home#index"
 
   # For now, just match to the email action.
