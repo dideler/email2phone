@@ -63,10 +63,14 @@ class Webhooks::SendgridController < WebhooksController
   end
 
   def call(recipient_number, message)
+    msg = "#{CGI.escape "Message[0]"}=#{CGI.escape "http://53x11.com/docs/zelda-secret.mp3"}&"\
+          "#{CGI.escape "Message[1]"}=#{CGI.escape message}"
+
     Twilio::Call.create(
       to: valid_number(recipient_number),
       from: valid_number(ENV['TWILIO_NUMBER']),
-      url: "http://twimlets.com/message?Message%5B0%5D=#{CGI.escape message}",
+      #url: "http://twimlets.com/message?#{CGI.escape message}", # Just the msg
+      url: "http://twimlets.com/message?#{msg}",
     )
   end
 
