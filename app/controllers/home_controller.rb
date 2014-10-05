@@ -7,7 +7,11 @@ class HomeController < ApplicationController
 
   def create
     @user = User.new(params[:user])
-    @user.save!
+    if @user.save
+      format.html { redirect_to action: "new", notice: 'Enjoy :)' } # Try success
+    else
+      format.html { render action: "new" }
+    end
   end
 
 end

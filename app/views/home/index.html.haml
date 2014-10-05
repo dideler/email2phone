@@ -88,6 +88,9 @@
               = f.email_field :email, hide_label: :true, placeholder: "Email"
               = f.submit "Sign up"
 
+            - if flash[:notice]
+              %p#notice= flash[:notice]
+
     %section#download.content-section.text-center
       .download-section
         .container
